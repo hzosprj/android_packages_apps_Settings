@@ -28,4 +28,8 @@
 
     <!-- HZ Maintainer -->
     <string name="hz_maintainer">Device Maintainer</string>
+
+    <!-- Hardware info -->
+    <string name="platform_revision">Platform</string>
+    <string name="total_ram">Total RAM</string>
 </resources>

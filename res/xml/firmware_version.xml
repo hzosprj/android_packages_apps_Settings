@@ -30,6 +30,22 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
+    <!-- Hertzify version -->
+    <Preference
+        android:key="hertzify_version"
+        android:title="@string/hertzify_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.HertzifyVersionDetailPreferenceController"/>
+
+    <!-- Maintainer -->
+    <Preference
+        android:key="os_build_maintainer"
+        android:title="@string/build_maintainer"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.HertzifyBuildMaintainerPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"

@@ -7,11 +7,8 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.net.Uri;
+import android.os.SystemProperties;
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.preference.Preference;
 
@@ -22,23 +19,21 @@ public class HertzifyBuildMaintainerPreferenceController extends BasePreferenceC
 
     private static final String TAG = "HertzifyBuildMaintainerCtrl";
 
-    private String mDeviceMaintainer;
-
+    private static final String PROPERTY_MAINTAINER = "ro.hertzify.maintainer";
+    
     public HertzifyBuildMaintainerPreferenceController(Context context, String key) {
         super(context, key);
-        mDeviceMaintainer = mContext.getResources().getString(R.string.build_maintainer_summary);
     }
 
     @Override
     public int getAvailabilityStatus() {
-        if (mDeviceMaintainer.equalsIgnoreCase("UNKNOWN")) {
-            return UNSUPPORTED_ON_DEVICE;
-        }
         return AVAILABLE;
     }
 
     @Override
     public CharSequence getSummary() {
+        String mDeviceMaintainer = SystemProperties.get(PROPERTY_MAINTAINER,
+                this.mContext.getString(R.string.device_info_default));
         return mDeviceMaintainer;
     }
 }

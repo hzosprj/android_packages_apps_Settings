@@ -39,7 +39,7 @@ public class HertzifyVersionDetailPreferenceController extends BasePreferenceCon
 
     private static final String TAG = "HertzifyVersionDialogCtrl";
 
-    private static final String KEY_HERTZIFY_VERSION_PROP = "ro.hertzify.version";
+    private static final String KEY_HERTZIFY_VERSION_PROP = "ro.hertzify.showversion";
 
     public HertzifyVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
